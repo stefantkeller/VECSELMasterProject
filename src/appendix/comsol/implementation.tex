@@ -1,0 +1,76 @@
+\subsection{Implementation of our VECSEL structure}
+\label{app:comsol_deriv:impl}
+
+In this subsection I discuss the parameters
+relevant for the actual COMSOL implementation,
+taking our structure as an example
+\cite{Ranta2014OptLett}.
+A schematic of our VECSEL structure
+is depicted in Fig.~\ref{img:design}.
+Its fabrication details can be found in
+\cite{Ranta2014OptLett,Sirbu2014SPIE}.
+A summary of the used parameters --
+in order to reproduce the presented results --
+is given in appendix~\ref{app:comsolparams},
+Tab.~\ref{tab:comsolparams}.
+
+For the thermal conductivity
+we have to consider
+its spatial anisotropy.
+The radial and axial thermal conductivity
+we find with
+\cite{Vetter2012,Lindberg2005,Osinski1993}
+\begin{align}
+k_r &= \frac{\sum_i k_i t_i}{\sum_i t_i} \\
+k_z &= \frac{\sum_i t_i}{\sum_i \frac{t_i}{k_i}},
+\label{eq:radaxthermcond}
+\end{align}
+with the actual values calculated from \cite{ioffe}
+\begin{equation}
+k_{\mathrm{Al}_{x}\mathrm{Ga}_{1-x}\mathrm{As}} =
+0.55-2.12x+2.48x^2\,\mathrm{Wcm}^{-1}\mathrm{K}^{-1}.
+\label{eq:k_AlGaAs}
+\end{equation}
+Before we employ
+the extracted values of
+a bulk Al$_{x}$Ga$_{1-x}$As material,
+we divide them in half.
+This way we account for
+the empirically observed decrease
+in thermal conductivity
+in a layered structure such as a DBR
+\cite{Piprek1998,Ranta2014APL}.
+
+The absorption coefficient $\alpha_\mathrm{g}$ 
+is chosen such that
+it matches with the measured single pass absorption of $50\,\%$
+\cite{Ranta2014OptLett}:
+\begin{equation*}
+\e^{-\alpha_\mathrm{g}t_\mathrm{g}}=0.5.
+\end{equation*}
+
+As a last important note we have to account
+for the reflected beam:
+it is absorbed in the gain section once again.
+Hence we implement a second heat source in this gain layer
+according to (\ref{eq:heatsrc})
+\begin{equation}
+Q_{\mathrm{g}_\mathrm{refl}} = \frac{2P}{\pi w^2} \eta_{\mathrm{g}_\mathrm{refl}}\alpha_g \e^\frac{-2r^2}{w^2} \e^{-\alpha_g(z_{0g}-t_g+z)}
+ \e^{-\alpha_\mathrm{InP} t_c -\alpha_\mathrm{g} t_\mathrm{g} -2\alpha_\mathrm{InP}t_\mathrm{sp} -2\alpha_\mathrm{d}t_\mathrm{d}}.
+\label{eq:heatsrcrefl}
+\end{equation}
+In this we have the expression
+\begin{equation}
+\eta_{\mathrm{g}_\mathrm{refl}} = \eta_\mathrm{g} (1-\eta_\mathrm{au}),
+\label{eq:etagrefl}
+\end{equation}
+that assumes the fraction of reflected light
+to be the residual light of what was not absorbed by the gold layer.
+This remaining part heats the layer with efficiency $\eta_\mathrm{g}$.
+Furthermore we see the sign in the exponent
+\begin{equation*}
+\e^{-\alpha_g(z_{0g}-t_g+z)}
+\end{equation*}
+to be positive.
+This comes from the fact that in reflection
+the beam travels in the opposite direction.

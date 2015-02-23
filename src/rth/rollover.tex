@@ -1,0 +1,78 @@
+\subsection{By roll over}
+\label{sec:rth:trollover}
+
+A second method,
+relies on an intrinsic roll over temperature.
+Roll over is an effect due to the optical pumping:
+While increasing the pump power
+in order to obtain higher emitted output,
+we heat the gain structure.
+This increase in temperature
+introduces an additional loss
+which the gain
+has to compensate.
+Otherwise,
+our device stops lasing.
+After a certain point
+the gain cannot compensate for the losses anymore,
+and this region stops contributing
+to the output.
+We see
+a decline
+in output power
+despite the higher pump --
+a roll-over.
+
+Heinen et al. \cite{Heinen2012}
+have found empirically --
+using the method described in \ref{sec:rth:lambda} --
+the longest wavelength
+at this roll over point
+is the same wavelength,
+regardless of the heat sink temperature.
+They conclude,
+this wavelength to correspond
+to an of the structure intrinsic
+critical temperature --
+the roll over temperature.
+Given definition (\ref{eq:rth})
+we find
+the difference in temperature
+between (unknown) roll over and heat sink.
+It is
+the thermal resistance
+times the dissipated power,
+\begin{equation}
+T_\mathrm{ro} - \Ths = \Rth D_\mathrm{ro}.
+\end{equation}
+In other words,
+when we plot
+dissipated power at roll over ($D_\mathrm{ro}$)
+versus the heat sink temperature
+for this measurement $\Ths$,
+we find a linear relation.
+Its slope corresponds
+to the thermal resistance,
+and the $y$-intersection
+to the roll over temperature \cite{Heinen2012}:
+\begin{equation}
+\Ths = -\Rth D_\mathrm{ro} + T_\mathrm{ro}.
+\end{equation}
+
+This relation is wavelength independent.
+Mode instabilities in pump and emission
+are expected to result in fluctuations
+in the emitted spectra.
+A spectrum independent method
+to determine $\Rth$ is thus supposed to
+yield a result with smaller uncertainty.
+The difficulties in this second method
+arise from identifying
+the exact point of roll over.
+Whether this identification
+is more or less error-prone
+is open for discussion.
+Furthermore,
+it is not yet clear
+whether all VECSEL designs
+show this intrinsic roll over behavior.

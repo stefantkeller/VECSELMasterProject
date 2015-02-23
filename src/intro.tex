@@ -1,0 +1,256 @@
+\section{Introduction}
+\label{sec:intro}
+
+A vertical-external-cavity
+surface-emitting laser
+(VECSEL)
+is a special type
+of semiconductor laser.
+It converts
+low cost diode pump light
+into high beam quality
+laser emission.
+VECSELs combine
+the benefits known from
+solid state lasers,
+such as high output power
+with high beam quality,
+with the flexibility
+of semiconductor lasers
+and their coverage
+of bandgap engineered
+emission wavelength
+\cite{Tropper2006,Ranta2014OptLett,Kemp2008,Chernikov2010}.
+
+The advantages of this technology
+made it attractive for a
+wide variety of applications,
+such as
+optical communication,
+spectroscopy,
+medical applications
+(both on detection and surgical side).
+VECSELs achieve
+high intra-cavity power
+which is ideal
+for non-linear optics.
+They can thus also be used
+to reach visible light
+via higher harmonics,
+which itself opens the field for
+laser TV and projectors.
+And frequency mixing
+also enables VECSELs
+to operate within the domains of
+microwave photonics,
+LIDAR, and THz sources 
+\cite{Ranta2014OptLett,Calvez2009,Sirbu2014OptExp,Baili2009,Lukowski2015,Bedford2005}.
+
+The $1300\,\mathrm{nm}$ waveband
+to date lacks options
+for high power laser sources.
+This range is particularly interesting
+\cite{Ranta2014OptLett,Sirbu2014OptExp}
+to pump and laser process
+materials
+beyond the reach
+of conventional
+sub-micron light sources.
+Furthermore,
+the frequency doubled
+$650\,\mathrm{nm}$
+red light
+fills an important gap
+for laser projection
+and spectroscopy.
+Additionally,
+this wavelength range
+benefits from
+pre-existing infrastructure
+and material development
+as a result of
+heavy investments of ICT.
+
+Our VECSEL device
+is composed of
+a gain region
+grown by metallorganic vapor phase epitaxy
+(MOVPE)
+on a InP substrate
+incorporating
+AlGaInAs quantum wells.
+The distributed Bragg reflector (DBR)
+was grown by molecular beam epitaxy (MBE).
+These two elements were wafer-fused
+and Au-Au-bonded
+onto chemical vapor deposited (CVD) diamond,
+which itself was attached
+onto a water-cooled heat sink.
+I present
+more on VECSEL basics
+and about the wafer fusion
+in the following section.
+The gold bonding interface
+introduces beneficial
+thermal and optical properties;
+this will play a role
+as we try to improve
+the performance of our device.
+The manufacturing details
+are beyond the scope of this project,
+they can be found in
+\cite{Ranta2014OptLett,Sirbu2014SPIE}.
+
+Numerical tools
+can be used
+to predict some of
+the VECSEL behaviors.
+Their usage,
+however,
+is fairly limited.
+This scarcity originates
+from the fact that
+in a VECSEL there are
+many effects to be considered:
+attempts have been made
+to calculate the
+absorption and gain of the quantum wells
+using semiconductor Block equations,
+considering spontaneous emission
+using semiconductor luminescence equations,
+and taking into account
+carrier losses
+using quantum Boltzmann scattering equations
+\cite{Hader2011}.
+All of these steps
+rely on exact material parameters
+for a broad range of
+doping concentrations,
+operation temperatures,
+and wavelengths.
+The dimensionalities
+of a VECSEL chip
+along the plane
+and growth axes
+are different by orders of magnitude.
+This complicates
+the meshing procedure
+for finite element analyses,
+which is a problem
+the thermal simulations
+in particular
+suffer from. 
+
+On top of that,
+the optical pump conditions
+are usually ignored
+in numerical models.
+The pump spot profile
+is considered
+to be one of two
+simplest options to implement:
+a Gaussian
+or a flat-top profile;
+under normal incidence
+\cite{Ranta2014OptLett,Kemp2008,Hader2011,Kemp2005}.
+Meanwhile,
+a more realistic pump profile
+would resemble something in between
+these two extreme forms,
+since the pump
+is usually delivered
+via a multi-mode fiber,
+under non-normal incidence
+\cite{Tropper2006,Chernikov2010,Heinen2012el}.
+
+As such,
+the simulations provide
+valuable insights
+in general trends
+of VECSEL behavior
+depending on particular parameters
+\cite{Hader2011,Vetter2012}.
+But one should be very careful
+using the numerical results
+as a fit
+onto experimental results.
+
+The goal of this project was
+to investigate --
+experimentally --
+the performance
+of our VECSEL structure
+under high power operation.
+This builds
+on previously published work
+\cite{Ranta2014OptLett,Sirbu2014OptExp}.
+Our idea is to learn about
+the power-scalability
+of our device,
+as well as to assess
+certain metrology processes.
+Based on the gained insights
+we then implemented
+two proposed strategies
+\cite{Hader2011}
+to further improve the performance.
+The benchmark was set
+by the current record output power
+for the $1300\,\mathrm{nm}$ waveband
+of $7.1\,\mathrm{W}$
+for a $300\,\mu\mathrm{m}$ pump spot diameter
+\cite{Sirbu2014OptExp}.
+
+This report starts
+by discussing
+the concept of VECSELs
+from a general point of view.
+In section~\ref{sec:basics},
+I look at
+the basic elements involved
+in order to obtain
+an operating VECSEL device.
+Since VECSELs
+are rich in details,
+I have to
+restrain the introduction to 
+the aspect of thermal management.
+The way heat flows
+throughout the structure
+is vital for its operation.
+In section~\ref{sec:rth},
+I introduce
+the concept of thermal resistance;
+a parameter that helps us
+to understand
+the heat extraction.
+This includes
+our understanding of this quantity
+from an experimental
+and numerical --
+in section~\ref{sec:comsol} --
+point of view.
+
+Given this general understanding
+of the important quantities,
+in section~\ref{sec:exp}
+I present our
+specific experimental setup
+and measurement routine
+aimed to extract said parameters.
+This leads to a discussion
+and interpretation
+of the obtained measurement results
+in section~\ref{sec:eval}.
+I close this report
+with a summary
+and conclusion;
+and an outlook on
+how to advance the project
+given the current state
+of the VECSEL characterization.
+The appendices
+provide additional insights
+for some of the discussed points --
+but that do not belong to
+the core report.

@@ -1,0 +1,93 @@
+\subsection{Power-scalability}
+\label{sec:rth:scaling}
+
+The gain section of a VECSEL
+is very thin compared to
+the dimensions of the optical pump spot.
+This gain region
+is heated
+due to the difference in photon energy of pump and output
+and due to non-radiative recombinations.
+In other words,
+heat is extracted
+over a short path
+with respect to the pump spot size,
+and the resulting
+heat flow is
+approximatively one dimensional.
+Lateral cooling is
+therefore
+not as relevant
+for the operation of such a device.
+One dimensional heat extraction means
+the device is power scalable:
+increasing the pumped area
+does not introduce
+significantly additional heating.
+The output power
+can be enhanced
+by enlarging the pumped area,
+so more of the gain material
+is stimulated
+into emission.
+This is the expected behavior
+of disk lasers.
+\cite{Tropper2006,Lindberg2005,Le1991}.
+
+Several effects
+hinder the real device
+to live up to these expectations.
+Bedford et al. \cite{Bedford2005} report
+a limit to this scalability:
+there is a critical diameter
+above which amplified spontaneous emission (ASE)
+and lateral lasing
+become relevant.
+These effects introduce additional losses
+which inevitably limit the output scaling.
+The pump beam shape
+was found to
+limit the power scaling further \cite{Chernikov2010}.
+Furthermore,
+larger beam spots
+risk to be more susceptible
+to surface impurities
+and non-radiative defects \cite{Korpi2010}.
+
+If the thermal resistance $\Rth$
+were to power scale,
+its value would have to decrease
+at an inverse rate of the pumped area, $w^{-2}$.
+As discussed by Giet et al. \cite{Giet2008},
+this is not the case.
+Instead,
+the decrease in $\Rth$ follows more closely
+the radius (diameter) of the pump spot
+than the area, $w^{-1}$.
+This behavior is apparent when we plot
+spot size versus thermal resistance
+in a log-log plot.
+The slope in such a plot
+is closer to $-1$ than to $-2$.
+
+For the sake of completeness,
+the thermal resistance can be fitted with
+the empirical formula \cite{Giet2008}
+\begin{equation}
+\Rth(w) = a_1+ \frac{a_2}{w} \left( 1-\frac{w}{a_3} \right)^{1.5}.
+\label{eq:Rth_empirical}
+\end{equation}
+This formula was adopted
+form a fit originally developed for VCSELs \cite{Nakwaski1992}.
+In the original form
+the ratio within the brackets
+represented the ratio between an inner and outer diameter
+of the VCSEL.
+Working with VECSELs we lack such a definition.
+As such,
+it is not clear
+what parameters $a_{\{1,2,3\}}$ are supposed
+to tell us about the VECSEL under test.
+So far,
+this description is not yet widely used
+by the scientific community.

@@ -1,0 +1,100 @@
+\subsection{Heat source $Q$}
+\label{app:comsol_deriv:Q}
+
+In order to understand
+how to investigate
+the temperature distribution
+within a VECSEL structure,
+we have to understand
+what input to provide to COMSOL
+to solve the heat equation (\ref{eq:app:heateq}).
+Our optical pumping represents
+a heat source $Q$.
+In this subsection
+I present what this quantity looks like,
+and what influence the different parameters --
+most notably, the beam profile --
+have.
+
+The pump beam
+is assumed to be
+incident antiparallel to the $z$-axis
+(here referred to as from the top).
+We assume further
+it is of Gaussian profile --
+section~\ref{sec:comsol:beamprofile}
+explains how to incorporate
+different pump profiles.
+In this configuration the heat source
+associated with
+each layer $j$ of the structure is given as
+\cite{Kemp2008}
+\begin{equation}
+Q_j = \frac{2P}{\pi w^2} \eta_j\alpha_j \e^\frac{-2r^2}{w^2} \e^{-\alpha_j(z_{0j}-z)} \e^{-\sum_{i<j}\alpha_i t_i}.
+\label{eq:app:heatsrc}
+\end{equation}
+The layers are counted from the top down --
+the sum $\sum_{i<j}$ includes the layers on top
+and ignores those below the layer of interest
+(in that case $j$).
+The meaning of the single parameters are listed in Tab.~\ref{tab:heatsrc}.
+Furthermore we recognize
+\begin{equation}
+P'=P\e^{-\sum_{i<j}\alpha_i t_i}
+\end{equation}
+to represent the power still remaining after layer $1,2,\ldots,j$.
+And
+\begin{equation}
+A=P'\eta_j
+\end{equation}
+corresponds
+to the absorbed power in layer $j$;
+which heats by factor $\alpha_j$.
+
+\begin{table}[h]
+\centering
+\caption{Meaning of parameters used in (\ref{eq:app:heatsrc}).}
+\begin{tabular}{llc}
+\hline
+Parameter & Explanation & Unit \\
+\hline
+$P$ & pump power & $\mathrm{W}$ \\
+$w$ & pump beam $1/e^2$ radius & $\mathrm{m}$ \\
+$\alpha_j$ & absorption coefficient of layer $j$ & $\mathrm{m}^{-1}$ \\
+$r$ & radial coordinate & $\mathrm{m}$ \\
+$z$ & axial coordinate & $\mathrm{m}$ \\
+$z_{0j}$ & coordinate of top of layer $j$ & $\mathrm{m}$ \\
+$t_j$ & thickness of layer $j$ & $\mathrm{m}$ \\
+$\eta_j$ & heat loading fraction in layer $j$ & - \\
+\hline
+\end{tabular}
+\label{tab:heatsrc}
+\end{table}
+
+The Gaussian beam assumed in (\ref{eq:app:heatsrc})
+has an E-field \cite{QE}
+\begin{equation}
+E(r,z) \propto \frac{w_0}{w(z)} \exp(-\frac{r^2}{w^2(z)}) \exp(-i\Phi).
+\label{eq:gaussE}
+\end{equation}
+The intensity of such a beam is proportional to the square modulus
+\begin{align}
+I(r,z) &\propto |E(r,z)|^2, \\
+I(r,z) &= I_0 \left(\frac{w_0}{w(z)}\right)^2 \exp(-\frac{2r^2}{w^2(z)}).
+\label{eq:gaussI}
+\end{align}
+This is where the factor $2$
+in the exponent of (\ref{eq:app:heatsrc})
+comes from.
+The over all power
+contained within the cross section
+is constant, $P$.
+Hence follows
+the last part of (\ref{eq:app:heatsrc})
+\begin{align}
+P &= \int\limits_0^{2\pi}\d\varphi\int\limits_0^\infty r\d r I(r,z) \\
+ &= 2\pi I_0 \left(\frac{w_0}{w(z)}\right)^2 \int\limits_0^\infty r \d r \exp(-\frac{2r^2}{w^2(z)}) \\
+ &= 2\pi I_0 \left( \frac{w_0}{w(z)}\right)^2 \left[ -\frac{w^2(z)}{4} \exp(-\frac{2r^2}{w^2(z)}) \right]_0^\infty \\
+ &= \frac{\pi}{2} w_0^2 I_0, \\
+\Rightarrow\quad I_0 &= \frac{2P}{\pi w_0^2}.
+\end{align}

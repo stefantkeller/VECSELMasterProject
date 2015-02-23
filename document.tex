@@ -1,0 +1,108 @@
+\documentclass[11pt, a4paper, twoside]{article}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage{dsfont} %double dashed fonts%
+\usepackage[english]{babel}
+\usepackage[pdftex]{graphicx}
+\usepackage{color}
+\usepackage{subfigure}
+\usepackage{listings}
+\usepackage[colorlinks]{hyperref}
+\usepackage[small]{caption}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amstext}
+\usepackage{tikz}
+\usetikzlibrary{arrows,decorations.pathmorphing,backgrounds}
+\usepackage[hmarginratio=1:2,vmargin=1in]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\newcommand{\e}{\mathrm{e}} % exponential e
+\renewcommand{\d}{\mathrm{d}} % for derivatives
+\renewcommand{\vec}[1]{{\boldsymbol #1}}
+\newcommand{\dd}[2]{\frac{\d #1}{\d #2}}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\degr}[1]{$#1\,^\circ\mathrm{C}$}
+
+\newcommand{\Rth}{R_\mathrm{th}} % to be used within $$!
+\newcommand{\Ths}{T_\mathrm{hs}} % to be used within $$!
+
+\numberwithin{equation}{section} %https://www.physicsforums.com/threads/numbering-the-equations-in-latex.324808/
+%\numberwithin{equation}{subsection}
+\numberwithin{table}{section}
+\numberwithin{figure}{section}
+
+\title{Performance of wafer-fused VECSEL under high power operation}
+\author{Stefan Keller\\
+{\it Master project, Departement Physik, ETH Z\"urich}\\
+{\it Dr. Vladimir Iakovlev*,}\\
+{\it Dr. Alexei Sirbu*,}\\
+{\it Prof. Dr. Eli Kapon*,}\\
+{\it Prof. Dr. J\'er\^ome Faist$^+$}\\
+\\
+*EPF Lausanne, $^+$ETH Z\"urich}
+\date{\today}
+
+\begin{document}
+\maketitle
+\fancyhead[LE]{VECSEL high power performance}
+\fancyhead[LO]{\leftmark}
+\fancyhead[R]{Stefan Keller}
+
+\begin{abstract}
+I report on the performance
+of $1300\,\mathrm{nm}$ waveband
+wafer-fused vertical-external-cavity
+surface-emitting laser (VECSEL)
+in a thin disk (flip-chip) heat dissipation scheme.
+I investigate on its scaling behavior
+concerning output power
+and thermal resistance.
+The latter is assessed
+on whether it provides
+a useful tool
+for device metrology.
+An optimization strategy
+concerning one of the manufacturing steps
+is evaluated,
+and resulted
+in the record performance
+of $8.5\,\mathrm{W}$
+output power
+with a conversion efficiency
+of $60\,\%$ at \degr{5}
+heat sink temperature.
+The reflectivity
+off our device
+is found to change
+with heat sink temperature
+and pump power.
+Last but not least,
+the investigated wafer-fused samples
+did not show signs of degradation
+despite exposure of
+inhospitable measurement conditions.
+\end{abstract}
+
+%\newpage
+\tableofcontents\newpage
+
+\input{src/intro}
+\input{src/basics}
+\input{src/thermalres}
+\input{src/comsol}
+\input{src/exp_setup}
+\input{src/evaluation}
+\input{src/conclusion}
+
+\newpage
+\appendix
+\input{src/appendix/alignment}
+\input{src/appendix/spatial}
+\input{src/appendix/comsol_deriv}
+
+\newpage
+\input{src/bib}
+
+\end{document}

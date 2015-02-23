@@ -1,0 +1,30 @@
+\section{COMSOL implementation}
+\label{app:comsol_deriv}
+
+The commercial software COMSOL
+allows us to perform thermal simulations
+with a finite-element approach.
+The heat equation
+to be solved
+reads as
+\begin{equation}
+0 = \nabla(k\nabla T) + Q.
+\label{eq:app:heateq}
+\end{equation}
+It is $k$ the thermal conductivity of the material
+($[k]=\mathrm{m}^{-1}$),
+and $Q$ the heat source
+($[Q]=\mathrm{W}/\mathrm{m}^3$);
+originating from the pump beam.
+Before we can talk about
+the numerical insights
+found with COMSOL,
+we have to understand
+the necessary parameters
+and their influence
+on this model.
+
+\input{src/appendix/comsol/qderivation}
+\input{src/appendix/comsol/implementation}
+\input{src/appendix/comsol/numconv}
+\input{src/appendix/comsol/comsolparams}

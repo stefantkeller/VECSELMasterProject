@@ -1,0 +1,72 @@
+\section{Surface temperature raise, numerically}
+\label{sec:comsol}
+
+The commercial software COMSOL
+allows us to perform thermal simulations
+with a finite-element approach.
+The heat equation
+to be solved
+reads as
+\begin{equation}
+0 = \nabla(k\nabla T) + Q.
+\label{eq:heateq}
+\end{equation}
+It is $k$ the thermal conductivity of the material
+($[k]=\mathrm{m}^{-1}$),
+and $Q$ the heat source
+($[Q]=\mathrm{W}/\mathrm{m}^3$);
+originating from the pump beam.
+With this equation we take into account
+only conduction
+and ignore convection.
+In anisotropic materials
+the thermal conductivity differs
+depending on the direction of conduction.
+For the simulation we assume radial symmetry,
+in order to bring the 3D problem down to 2D.
+This saves computation time.
+
+In this section,
+I cover some numerical considerations
+regarding the pump induced
+temperature increase
+within the different layers
+of a VECSEL structure.
+The presented plots
+show the expected temperature profile
+along the most important interface:
+the top of the gain section \cite{Ranta2014OptLett}.
+
+I only describe
+the new considerations
+made in the course
+of this project.
+While in appendix~\ref{app:comsol_deriv},
+I explain
+where the formulae come from
+that are widely used in literature
+\cite{Ranta2014OptLett,Kemp2008,Kemp2005,Vetter2012,Lindberg2005}.
+This appendix also provides
+additional insights,
+necessary to properly implement
+our structure in COMSOL.
+I start by introducing
+a beam profile
+that was so far not considered
+in these investigations.
+Eventually,
+I present
+the calculated
+pump induced temperature increase
+along the surface of the gain layer
+of our VECSEL structure,
+considering different pump powers
+and pump beam profiles.
+
+
+
+\input{src/comsol/beamprofile}
+\input{src/comsol/tempincrease}
+
+
+

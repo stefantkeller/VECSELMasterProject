@@ -1,0 +1,372 @@
+\subsection{Setup and sample}
+\label{sec:exp:setup}
+
+\begin{figure}
+\centering\include{img/setup_sketch}
+\caption{The sample is mounted on a
+water cooled heat sink (HS).
+The external cavity is defined by the output coupler (OC)
+and the active mirror
+attached to the HS.
+The pump is incident at
+approximately $36\,^\circ$, with power $P$.
+We are further interested in
+the emitted power $E$,
+and the reflected power $R$.}
+\label{img:setup_sketch}
+\end{figure}
+
+Figure~\ref{img:setup_sketch} depicts
+the basic scheme of the used setup:
+The VECSEL sample is mounted
+on a water cooled heat sink,
+and is optically pumped by power $P$,
+with a pump spot size
+of radius $w$.
+Some of this pump light is
+converted and emitted ($E$),
+reflected off the sample ($R$),
+and the rest is said to be dissipated ($D$),
+through the sample
+onto the heat sink.
+For the light-light characteristics
+we are interested
+in the relation between $P$ and $E$.
+Respectively,
+we are interested in
+how much of the net pump light
+is converted into emitted light.
+This net pump we signify as
+absorbed power
+\begin{equation}
+A = P-R.
+\label{eq:abspwr}
+\end{equation}
+This definition
+of absorbed power
+overestimates
+the real absorbed power,
+it ignores
+surface scattering and
+spontaneous emission outside the cavity.
+For the experiments
+presented this report,
+I ignore these loss channels.
+
+The pump is a $980\,\mathrm{nm}$ diode laser.
+Figure~\ref{img:pumpspectrum} illustrates the spectrum
+for two different pump currents.
+The pump is delivered by a multimode fiber.
+We image its end onto the sample,
+under an incidence angle
+of approximately $36\,^\circ$,
+using various lenses.
+This results in
+the various spot diameters
+$2w=\{180,200,300,333,400,444\}\,\mu\mathrm{m}$.
+To ensure good mode overlap
+the cavity lengths has to be adjusted.
+
+\begin{figure}
+\centering
+\subfigure{\includegraphics[width=7cm]{img/PumpSpectrum30p3A.png}}
+\subfigure{\includegraphics[width=7cm]{img/PumpSpectrum74p9A.png}}
+\caption{Spectrum of nominally $980\,\mathrm{nm}$ pump beam;
+measured at $\approx6\,\mathrm{cm}$ distance to
+divergent pump delivery fiber,
+under $0\,^\circ$ incidence.
+The plots correspond to an optical output of
+$21\,\mathrm{W}$ and $56\,\mathrm{W}$,
+respectively.}
+\label{img:pumpspectrum}
+\end{figure}
+
+The VECSEL-sample is designed to emit
+around $1270\,\mathrm{nm}$.
+The fabrication details are published elsewhere
+\cite{Ranta2014OptLett,Sirbu2014SPIE};
+they are not part of this report.
+The essential details are highlighted
+in section~\ref{sec:basics},
+section~\ref{sec:intro}.
+
+Monitoring the reflection
+off the sample
+is crucial for high power operation.
+For one,
+we want to design the VECSEL structure
+such that it absorbs as much
+of the pump light as possible.
+Secondly, depending on the exact application
+the VECSEL is used for,
+the reflected light may pose
+a health hazard;
+or at least an additional heat spot
+that needs to be taken care of.
+
+The thermal resistance $\Rth$
+connects the sample temperature
+with the dissipated power (\ref{eq:rth})
+\begin{equation}
+T = \Rth D.
+\end{equation}
+The performance of a VECSEL depends on temperature.
+The thermal management of the device is thus critical
+\cite{Tropper2006,Kemp2008,Vetter2012}
+and thus a low thermal resistance is desired.
+Furthermore,
+the thermal resistance
+is the only experimentally accessible quantity
+to assess the heat flow in a VECSEL \cite{Heinen2012}.
+Beside the quantities mentioned in Fig.~\ref{img:setup_sketch},
+in order to estimate the thermal resistance
+we also need to record the spectrum of the emitted light
+\cite{Ranta2014OptLett,Heinen2012},
+see section~\ref{sec:rth}.
+
+Figure~\ref{img:setup_photo} shows a photograph of our setup.
+It meets the specifications
+to measure pumped,
+reflected, and
+emitted power,
+as well as the spectra
+simultaneously.
+The pumped and reflected power
+we measure by sampling
+a fraction of the beam.
+The reflectivity of these beam sampler
+depend on the incidence angle.
+This beam sampling fraction
+needs thus to be recalibrated
+whenever we change the beam sampler configuration.
+We have to adjust the configuration
+for example when we change
+the pump spot size.
+
+The pump spot size we vary
+by changing the lenses
+used to image the fiber end
+onto the sample.
+In Fig.~\ref{img:setup_photo}
+these are denoted as
+$\mathrm{L}_\mathrm{p1}$ and $\mathrm{L}_\mathrm{p2}$.
+The distance between delivery fiber
+and the first lens has to
+correspond to its focal length.
+In this configuration
+the beam after the first lens is collimated.
+This arrangement we test by eye,
+with the help of an IR-viewer.
+The pump spot is at
+a distance of a focal length
+after the second lens.
+
+In order to find the exact distance,
+we look for the alignment
+with the lowest lasing threshold --
+visualized by a camera
+in the emission path.
+This initial position
+is further optimized
+during the fine-alignment
+of the output coupler,
+aiming at optimal output power.
+ 
+The ratio in focal lengths
+of the two employed lenses
+corresponds to obtained spot size.
+I report the usage
+of two types of lenses
+for lens $\mathrm{L}_\mathrm{p1}$:
+a plano-convex,
+spherical lens
+motivated by the publications
+by Heinen et al. \cite{Heinen2012el,Heinen2012};
+and a plano-convex, achromatic lens.
+Given the fairly narrow pump spectrum
+depicted in Fig.~\ref{img:pumpspectrum}
+we wouldn't expect
+the achromaticity itself
+to have much of an effect.
+On the other hand,
+the achromatic doublet
+has been corrected
+for various aberrations \cite{ThorlabsAC}.
+This may contribute
+a relevant beam property.
+All lenses,
+as well as the beam samplers,
+are appropriately coated
+(meaning B- and C-coated
+in the pump and emission branch,
+respectively).
+
+\begin{figure}
+\centering
+\includegraphics[width=14.5cm]{img/setup_photo.png}
+\caption{The pump light is delivered
+with a $200\,\mu\mathrm{m}$ multimode (MM) fiber
+whose end is imaged onto the sample.
+The sample is
+mounted on a water cooled copper heat sink.
+We image
+using various lenses
+($\mathrm{L}_\mathrm{p1}$,$\mathrm{L}_\mathrm{p2}$),
+resulting in various spot sizes.
+The reflected, divergent light
+is collected by lens $\mathrm{L}_\mathrm{r}$
+and subsequently directed onto a beam dump.
+The two beam sampler
+($\mathrm{BS}_\mathrm{p}$ and $\mathrm{BS}_\mathrm{r}$)
+probe a fraction of the pumped
+and reflected light.
+This beam sample is directed
+to their respective detectors
+($\mathrm{D}_\mathrm{p}$ and $\mathrm{D}_\mathrm{r}$).
+The sample,
+together with the output coupler (OC),
+form the external cavity.
+The OC has an output coupling loss
+$\alpha_\mathrm{OC}=2.5\,\%$,
+and a radius of curvature
+$ROC=50\,\mathrm{mm}$.
+The VECSEL emission
+is collected by lens $\mathrm{L}_\mathrm{e}$
+and directed onto power meter $\mathrm{D}_\mathrm{e}$.
+A fraction of this output
+is extracted by beam sampler $\mathrm{BS}_\mathrm{e}$
+and directed onto the MM-fiber
+connected with the optical spectrum analyzer (OSA).
+The polarization
+of neither
+pump nor emission
+is filtered,
+in our setup
+we do not distinguish
+between polarization dependent phenomena.
+Cameras 1 and 2 facilitate the alignment.}
+\label{img:setup_photo}
+\end{figure}
+
+The sample is attached on a ceramic plate,
+which itself is attached
+to a water cooled copper block,
+using thermal grease.
+The reported heat sink temperature
+is the temperature we measure
+at the copper block.
+Due to the irradiated power
+the heat sink cannot keep a constant temperature.
+As a result the measurements
+see a fluctuation of about
+$\pm$\degr{1} standard deviation.
+These temperature fluctuations are addressed
+again in subsection~\ref{sec:exp:measroutine}.
+
+I have worked with
+two samples,
+addressing a proposed optimization strategy
+\cite{Hader2011}.
+A magnified photo of
+sample 1 is shown in Fig.~\ref{img:sample_surface}.
+It is illuminated by $980\,\mathrm{nm}$ pump light,
+highlighting the defects
+that don't contribute to photo luminescence.
+The camera has burnt spots itself.
+In order not to confuse
+the camera defects
+with those of the structure,
+I have covered those of the camera
+with blue dots.
+The presented measurements
+were taken when irradiating
+either of the two regions
+denoted as A and B,
+respectively.
+
+We investigate the effect
+of two optimization strategies
+\cite{Hader2011}.
+First, we have coated this same sample 1
+with an anti-reflection coating.
+The surface integrity
+after the necessary
+surface treatment
+and coating
+is shown in Fig.~\ref{img:sampleAR_surface}.
+It doesn't highlight the surface roughness
+which visibly worsened
+because of the coating.
+This lead to poorer performance,
+as will be discussed
+in section~\ref{sec:eval:maxout}.
+
+For the second optimization
+the gold layer between the DBR
+and the CVD diamond
+is treated to be highly reflective.
+For this measure
+we have to take a second sample.
+Its active region and DBR
+are identical
+with those of sample 1.
+Figure~\ref{img:sampled6_surface}
+shows the surface integrity
+of sample 2.
+
+\begin{figure}
+\centering
+\includegraphics[width=6cm]{img/sample_surface.png}
+\caption{Sample 1.
+Used for pump spot scaling.
+Magnified by a microscope,
+illuminated with $980\,\mathrm{nm}$ light.
+This light source makes visible
+the defects of the structure;
+as the dark spots will also be dark
+when pumped during laser operation.
+The blue dots cover defects
+of the used camera,
+which otherwise may be mistaken
+as defects of the sample.
+The red circles indicate
+irradiation region A and B,
+respectively.
+The sample dimensions are $3\times3\,\mathrm{mm}$.}
+\label{img:sample_surface}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=6cm]{img/sampleAR_surface.png}
+\caption{Sample 1 from Fig.~\ref{img:sample_surface},
+after surface treatment and AR coating.
+The brightness cannot be compared
+with the one from Fig.~\ref{img:sample_surface},
+the camera is not calibrated for such a comparison.
+The illumination at $980\,\mathrm{nm}$
+shows non-radiative defects,
+but it doesn't show the surface roughness.
+The red circle indicates the tested spot.}
+\label{img:sampleAR_surface}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=6cm]{img/sampled6_surface.png}
+\caption{Sample 2.
+Used to investigate
+an optimization strategy:
+reflecting metalization layer behind the DBR.
+The brightness cannot be compared
+with the one from Fig.~\ref{img:sample_surface},
+the camera is not calibrated for such a comparison.
+The $980\,\mathrm{nm}$ light source
+makes visible
+the non radiative defects of the structure.
+The blue dots cover camera defects.
+The red circles indicates
+the tested spot.
+The sample dimensions are $3\times3\,\mathrm{mm}$.}
+\label{img:sampled6_surface}
+\end{figure}

@@ -1,0 +1,61 @@
+\subsection{Explicit listing of simulation parameters}
+\label{app:comsolparams}
+
+Because numerical simulations are difficult to reproduce
+when the used parameters are unknown,
+the ones I used for section~\ref{sec:comsol}
+are listed in Tab.~\ref{tab:comsolparams}.
+
+\begin{table}[h]
+\centering
+\caption{Parameters used in the COMSOL simulation
+reported in section~\ref{sec:comsol}.}
+\begin{tabular}{lll}
+\hline
+ & Quantity & Value \\
+\hline
+$P_\mathrm{p}$ & Pump power & $32\,\mathrm{W}$ \\
+$w_\mathrm{p}$ & Pump beam radius ($1/\e^2$) & $100\,\mathrm{\mu m}$ \\
+$t_\mathrm{c}$ & Thickness cap [Specs] & $0.1017\,\mathrm{\mu m}$ \\
+$t_\mathrm{g}$ & Thick. gain [Specs] & $0.7785\,\mathrm{\mu m}$ \\
+$t_\mathrm{sp}$ & Thick. InP spacer [$\lambda$, Specs] & $0.4039\,\mathrm{\mu m}$ \\
+$t_\mathrm{d}$ & Thick. DBR [Specs] & $5.0709\,\mathrm{\mu m}$ \\
+$t_\mathrm{au}$ & Thick. Au layer [estimate] & $200\,\mathrm{nm}$ \\
+$t_\mathrm{dia}$ & Thick. diamond layer & $0.3\,\mathrm{mm}$ \\
+$t_\mathrm{HS}$ & Thick. copper heat sink & $3\,\mathrm{mm}$ \\
+$k_\mathrm{InP}$ & Thermal conductivity InP \cite{Piprek2002} & $68\,\mathrm{W/(K\cdot m)}$ \\
+$k_\mathrm{g}$ & Therm. cond. gain \cite{Piprek2002} & $4\,\mathrm{W/(K\cdot m)}$ \\
+$k_\mathrm{d}$ & Therm. cond. DBR \cite{Piprek1998} & $0.35\,\mathrm{W/(cm\cdot K)}$ \\
+$k_\mathrm{dr}$ & Therm. cond DBR in radial \cite{Vetter2012,ioffe,Piprek1998} & $36.8\,\mathrm{W/(m\cdot K)}$ \\
+$k_\mathrm{dz}$ & Therm. cond DBR in z \cite{Vetter2012,ioffe,Piprek1998} & $34.6\,\mathrm{W/(m\cdot K)}$ \\
+$k_\mathrm{dia}$ & Therm. cond. diamond \cite{Ranta2014OptLett} & $1800\,\mathrm{W/(m\cdot K)}$ \\
+$k_\mathrm{au}$ & Therm. cond of gold \cite{SpringerMat} & $320\,\mathrm{W/(m\cdot K)}$ \\
+$\alpha_\mathrm{InP}$ & Absorption coeff InP at 980 nm \cite{SpringerMat,ioffe} & $0\,\mathrm{mm}^{-1}\mathrm{}$ \\
+$\alpha_\mathrm{g}$ & Absorpt. gain \cite{Ranta2014OptLett} & $0.9\times 10^{6}\,\mathrm{m}^{-1}\mathrm{}$ \\
+$\alpha_\mathrm{d}$ & Abs. DBR at 980 nm \cite{SpringerMat,ioffe} & $0\,\mathrm{mm}^{-1}\mathrm{}$ \\
+$\alpha_\mathrm{au}$ & Abs. Au \cite{SpringerMat,ioffe,Schubert} & $86554\,\mathrm{mm}^{-1}\mathrm{}$ \\
+$\lambda_\mathrm{p}$ & Pump wavelength & $980\,\mathrm{nm}$ \\
+$\lambda_\mathrm{L}$ & Laser wavelength & $1270\,\mathrm{nm}$ \\
+$\eta_\mathrm{c}$ & Heat loading fraction: cap & $0$ \\
+$\eta_\mathrm{g}$ & Heat loading fraction: gain & $1-\lambda_\mathrm{p}/\lambda_\mathrm{L}$ \\
+$\eta_\mathrm{sp}$ & Heat loading fraction: spacer & $0$ \\
+$\eta_\mathrm{d}$ & Heat loading fraction: DBR & $0$ \\
+$\eta_\mathrm{au}$ & Heat loading fraction: Au & $0.75$ \\
+$\eta_\mathrm{g_{refl}}$ & Heat load. frac.: Gain from reflected beam & $\eta_\mathrm{g}*(1-\eta_\mathrm{au})$ \\
+$z_\mathrm{0c}$ & Coordinate top of cap & $z_\mathrm{0g}+t_\mathrm{c}$ \\
+$z_\mathrm{0g}$ & Coord top of gain & $z_\mathrm{0sp}+t_\mathrm{g}$ \\
+$z_\mathrm{0sp}$ & Coord top of spacer & $z_\mathrm{0d}+t_\mathrm{sp}$ \\
+$z_\mathrm{0d}$ & Coord top of DBR & $z_\mathrm{0au}+t_\mathrm{d}$ \\
+$z_\mathrm{0au}$ & Coord top Au layer; Interf. Au-DBR to be at 0. & $0\,\mathrm{m}$ \\
+$z_\mathrm{dia}$ & Coord bottom diamon layer & $z_\mathrm{0au}-t_\mathrm{au}-t_\mathrm{dia}$ \\
+$z_\mathrm{HS}$ & Coord bottom HS & $z_\mathrm{dia}-t_\mathrm{HS}$ \\
+$r_\mathrm{v}$ & Width of VECSEL; small for better numeric & $2*w_\mathrm{p}$ \\
+$r_\mathrm{HS}$ & Width of heat sink (and diamond) & $2.5\,\mathrm{mm}$ \\
+$T_\mathrm{C}$ & \degr{0} & $273.16\,\mathrm{K}$ \\
+$T_\mathrm{0}$ & Base temperature & $T_C+15\,\mathrm{K}$ \\
+$\beta$ & Exponent of Supergaussian & $\{3,4\}$ \\
+$a_\beta$ & normalization super-Gaussian & $\{0.5687,0.6267\}$ \\
+\hline
+\end{tabular}
+\label{tab:comsolparams}
+\end{table}
